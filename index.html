@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+    <!--  -->
+    <script
+      src="https://kit.fontawesome.com/1df6409e58.js"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"></script>
+    <!--  -->
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <div class="main_span">
+          <span>A</span>
+          <span>W</span>
+          <span>S</span>
+          <span>M</span>
+        </div>
+      </div>
+      <ul class="lists">
+        <div class="dayNight">
+          <i class="fa-solid fa-sun"></i>
+          <i class="fa-solid fa-moon"></i>
+        </div>
+        <li>Home</li>
+        <li>About</li>
+        <li>Blog</li>
+        <li>Contact</li>
+        <div id="indicator"></div>
+      </ul>
+      <div class="bar">
+        <svg
+          id="icon"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0l-3.75-3.75M17.25 21L21 17.25" />
+        </svg>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="Image_Container">
+        <div class="FullImg" id="FullImg">
+          <img
+            src="/img/Porn_3.jpg"
+            alt=""
+            data-text="PornImg"
+            id="fullWidth"
+            onclick="ZOOM()" />
+          <svg
+            onclick="Remove()"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 remove">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <img
+          src="/img/Porn_3.jpg"
+          alt=""
+          data-text="PornImg"
+          onclick="Image(this.src)" />
+        <img
+          src="/img/Porn_4.jpg"
+          alt=""
+          data-text="PornImg"
+          onclick="Image(this.src)" />
+        <img
+          src="/img/Porn_5.jpg"
+          alt=""
+          data-text="PornImg"
+          onclick="Image(this.src)" />
+        <img
+          src="/img/Porn_6.jpg"
+          alt=""
+          data-text="PornImg"
+          onclick="Image(this.src)" />
+        <img
+          src="/img/Porn_69.jpg"
+          alt=""
+          data-text="PornImg"
+          onclick="Image(this.src)" />
+        <img
+          src="/img/Porn11.jpg"
+          alt=""
+          data-text="PornImg"
+          onclick="Image(this.src)" />
+        <img
+          src="/img/Porn_T_10.jpg"
+          alt=""
+          data-text="PornImg"
+          onclick="Image(this.src)" />
+        <img
+          src="/img/Porn_T_12.jpg"
+          alt=""
+          data-text="PornImg"
+          onclick="Image(this.src)" />
+        <img
+          src="/img/Porn_T_14.jpg"
+          alt=""
+          data-text="PornImg"
+          onclick="Image(this.src)" />
+        <img
+          src="/img/Porn_T_15.jpg"
+          alt=""
+          data-text="PornImg"
+          onclick="Image(this.src)" />
+        <img
+          src="/img/Porn_T_16.jpg"
+          alt=""
+          data-text="PornImg"
+          onclick="Image(this.src)" />
+        <img
+          src="/img/Porn_T_18.jpg"
+          alt=""
+          data-text="PornImg"
+          onclick="Image(this.src)" />
+        <img
+          src="/img/Porn_T_19.jpg"
+          alt=""
+          data-text="PornImg"
+          onclick="Image(this.src)" />
+        <img
+          src="/img/Porn_T_22.jpg"
+          alt=""
+          data-text="PornImg"
+          onclick="Image(this.src)" />
+        <img
+          src="/img/Porn_T_3.jpg"
+          alt=""
+          data-text="PornImg"
+          onclick="Image(this.src)" />
+      </div>
+    </div>
+    <script>
+      let Marker = document.getElementById("indicator");
+      let LI = document.querySelectorAll(".lists li");
+
+      function Indicator(e) {
+        Marker.style.left = e.offsetLeft + "px";
+        Marker.style.width = e.offsetWidth + "px";
+        Marker.style.display = "block";
+        if (Lists) {
+          Marker.style.top = e.offsetTop + "px";
+          Marker.style.width = e.offsetWidth + "px";
+        }
+      }
+
+      LI.forEach((child) => {
+        child.addEventListener("click", (e) => {
+          Indicator(e.target);
+        });
+      });
+      //   Variables
+      let Icon = document.getElementById("icon");
+      let Lists = document.querySelector(".lists");
+
+      Icon.addEventListener("click", (e) => {
+        Lists.classList.toggle("activate");
+      });
+      //
+
+      const sun = document.querySelector(".fa-sun");
+      const moon = document.querySelector(".fa-moon");
+      const dayNight = document.querySelector(".dayNight");
+      const backGround = document.querySelector("body");
+      const navTexts = document.querySelector("nav");
+      // console.log(sun, moon);
+
+      dayNight.addEventListener("click", () => {
+        // sun.style.display = "block";
+        // moon.style.display = "none";
+        // sun.classList.toggle("sun");
+        // if (sun.contains(sun)) {
+        // moon.classList.toggle("moon");
+        // Lists.style.color = "#fcf6b1";
+        // }
+        sun.classList.toggle("sun");
+        moon.classList.toggle("moon");
+        dayNight.classList.toggle("border");
+        backGround.classList.toggle("bg");
+        Lists.classList.toggle("color");
+        document.querySelector(".main_span").classList.toggle("bg");
+      });
+    </script>
+  </body>
+</html>

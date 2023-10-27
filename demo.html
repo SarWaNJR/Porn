@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let Day = 8;
+      switch (Day) {
+        case 1:
+          console.log("Sunday");
+          break;
+        case 2:
+          console.log("Monday");
+          break;
+        case 3:
+          console.log("Tuesday");
+          break;
+        case 4:
+          console.log("Wednesday");
+          break;
+        case 5:
+          console.log("Thursday");
+          break;
+        case 6:
+          console.log("Friday");
+          break;
+        case 7:
+          console.log("Saturday");
+          break;
+
+        default:
+          console.log("Invalid Key Entered");
+
+          break;
+      }
+      const Players = [
+        { name: "Ronaldo", Age: 38, Team: "AL Nasir" },
+        { name: "Rooney", Age: 36, Team: "Man Utd" },
+        { name: "Halland", Age: 21, Team: "Man City" },
+        { name: "Vinicius Junior", Age: 22, Team: "Real Madrid" },
+        { name: "Kevin Debrane", Age: 28, Team: "Man City" },
+        { name: "Lional Messi", Age: 36, Team: "Inter Miami" },
+        { name: "Julian Alvaraz", Age: 21, Team: "Man City" },
+        { name: "Fodern", Age: 21, Team: "Man City" },
+        { name: "Jack Grealish", Age: 26, Team: "Man City" },
+        { name: "Rashford", Age: 27, Team: "Man Utd" },
+        { name: "Harry Meguaya", Age: 29, Team: "Man Utd" },
+        { name: "Neymar JR", Age: 29, Team: "PSG" },
+        { name: "Joy Beliangam", Age: 18, Team: "Real Madrid" },
+        { name: "Rahim Sterling", Age: 31, Team: "Chelsea" },
+      ];
+      function App() {
+        return Players.filter((item) => {
+          return item.name.startsWith("R");
+        });
+      }
+      let one = App()[1].name;
+      let two = App()[2].name;
+      let three = App()[3].name;
+      console.log(one + " " + two + " " + three);
+      let Numbers = [1, 2, 3, 4, 7, 9, 10, 12, 15, 21, 100];
+      let PushNumbersHere = [];
+      function MissingNumbers(num) {
+        let Max = Math.max(...num);
+        let Min = Math.min(...num);
+        for (let i = Min; i < Max; i++) {
+          if (num.indexOf(i) < 0) {
+            PushNumbersHere.push(i);
+          }
+        }
+        return PushNumbersHere;
+      }
+      console.log(MissingNumbers(Numbers));
+
+      function FindEven() {
+        return Numbers.filter((even) => {
+          return even % 2 == 0;
+        });
+      }
+      console.log("This is even numbers = " + FindEven());
+      let ADDNUMBERS = [1, 2, 3, 94, 100, 800];
+      let Add = ADDNUMBERS.reduce((a, b) => {
+        return a + b;
+      });
+      console.log(Add);
+      // let Input = prompt("Enter Numbers");
+      let odd = "Odd Number";
+      let Even = "Even Number";
+      // if (Input % 2 == 0) {
+      //   document.write(`<h1> This Number ${Input} Is ${Even} </h1>`);
+      // } else {
+      //   document.write(`<h1> This Number ${Input} Is ${odd} </h1>`);
+      // }
+      // Ternary Operator;
+      // Input % 2 == 0
+      //   ? document.write(`<h1> This Number ${Input} Is ${Even} </h1>`)
+      //   : document.write(`<h1> This Number ${Input} Is ${odd} </h1>`)
+      // Switch Case;
+      // switch (true) {
+      //   case Input % 2 == 0:
+      //     document.write(`<h1> This Number ${Input} Is ${Even} </h1>`);
+      //     break;
+      //   case Input % 2 == !0:
+      //     document.write(`<h1> This Number ${Input} Is ${odd} </h1>`);
+      //     break;
+      //   case Input < 0:
+      //     document.write(`<h1> Invalid Number </h1>`);
+      //     break;
+      // }
+      let DuplicateNumbers = [
+        1,
+        2,
+        3,
+        4,
+        4,
+        2,
+        1,
+        10,
+        3,
+        "Sarwan",
+        "Kalai",
+        "Sarwan",
+      ];
+      console.log(DuplicateNumbers);
+      function Method_1() {
+        return DuplicateNumbers.filter((el, index) => {
+          return DuplicateNumbers.indexOf(el) === index;
+        });
+      }
+      console.log(Method_1());
+
+      function Method_2() {
+        return [...new Set(DuplicateNumbers)];
+      }
+      console.log("'Using Spread Operator'");
+      console.log(Method_2());
+
+      function Method_3() {
+        let a = {};
+        DuplicateNumbers.forEach((remove) => {
+          if (!a[remove]) {
+            a[remove] = true;
+          }
+        });
+        return Object.keys(a);
+      }
+      console.log("For_each Methods");
+      console.log(Method_3());
+      function Method_4() {
+        let X = [];
+        DuplicateNumbers.map((A) => (!X.includes(A) ? X.push(A) : ""));
+        return X;
+      }
+      console.log("Map methods");
+      console.log(Method_4());
+      let Numbers_2 = [1, 2, 3, 4, 6, 7, 9, 10];
+      let Missing = [];
+      function MissingNumb(array) {
+        let Max = Math.max(...array);
+        let Min = Math.min(...array);
+        for (let i = Min; i < Max; i++) {
+          if (array.indexOf(i) < 0) {
+            Missing.push(i);
+          }
+        }
+        return Missing;
+      }
+      console.log(MissingNumb(Numbers_2));
+
+      function Largest() {
+        return Numbers_2.sort((a, b) => {
+          return b - a;
+        });
+      }
+      console.log(Largest());
+      let Numb = [1, 2, 3, 4, 5];
+      Numb.unshift(0); //Add LeftSide
+      // Numb.pop(); //Remove Last element
+      Numb.push(6, 7, 8, 9, 10);
+      Numb.splice(11, 11, 11, 12, 13, 14, 15);
+      console.log(Numb);
+
+      // let Capitalize = prompt("Enter Words Here");
+      // Capitalize = Capitalize.split(" ")
+      //   .map((word) => {
+      //     return word.charAt(0).toUpperCase() + word.slice(1);
+      //   })
+      //   .join("--");
+      // console.log(Capitalize);
+      // Call Back Function
+      function toDisplay(result) {
+        document.write(`<h2>${result}</h2>`);
+      }
+      function CallBack(num1, num2, Storage) {
+        let Sum = num1 + num2;
+        Storage(Sum);
+      }
+      CallBack("HI ", "I'm Saravanan", toDisplay);
+      // Anonymous Function ---function without the names
+      let Store = function (num1, num2) {
+        return num1 + num2;
+      };
+      console.log(Store(10, 90));
+
+      (function () {
+        console.log("Hello Anonymous Function");
+      })();
+      setTimeout(function () {
+        console.log("Saravanan");
+      }, 8000);
+      // Recursive Function In Javascript---
+      function CountDown(number) {
+        console.log(number);
+        number++;
+        if (number <= 20) {
+          CountDown(number);
+        }
+      }
+      CountDown(1);
+
+      class Car {
+        constructor(model, make) {
+          this.model = model;
+          this.make = make;
+        }
+      }
+      const hisCar = new Car("Hundai I20", "Maruthi Suzuki");
+      const herCar = new Car("Audi-A1", "Audi");
+      const MyCar = new Car("Altroz", "Tata");
+      console.log(hisCar, herCar, MyCar);
+
+      class Person {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+        greet() {
+          return "Hello " + this.name;
+        }
+      }
+      let Storage = new Person("Alvarez", 23);
+      let ChangeName = () => {
+        this.name = "Messi";
+      };
+      document.write(`<h1>${Storage.greet()}</h1>`);
+    </script>
+  </body>
+</html>

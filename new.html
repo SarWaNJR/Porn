@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .select {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .select select {
+        font-size: 1.5rem;
+        border-radius: 20px;
+        text-align: center;
+        font-family: cursive;
+        outline: none;
+        padding: 10px 20px;
+        border: 4px groove rebeccapurple;
+        cursor: pointer;
+      }
+      .h1 {
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 14rem;
+        background-color: aqua;
+        padding: 20px 10px;
+        border-radius: 12px;
+      }
+      .division {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="select">
+      <select id="Colors" size="1">
+        <option value="red">red</option>
+        <option value="green">green</option>
+        <option value="gold">gold</option>
+        <option value="orangered">orangered</option>
+        <option value="purple">purple</option>
+        <option value="teal">teal</option>
+      </select> -->
+    <!-- </div> -->
+    <script>
+      let division = document.createElement("div");
+      division.className = "division";
+      let Heading = document.createElement("h1");
+      Heading.className = "h1";
+      Heading.id = "demo";
+      Heading.innerText = "Click to Change";
+      Heading.onclick = Click;
+      document.body.appendChild(Heading);
+      let Div = document.createElement("div");
+      Div.className = "select";
+      document.body.appendChild(Div);
+      let Colors = ["red", "green", "yellow", "orangered"];
+      let Generate = Math.floor(Math.random() * Colors.length);
+      let GetColors = Colors[Generate];
+
+      let Select = document.createElement("select");
+      Select.id = "Colors";
+      Div.appendChild(Select);
+      for (let i = 1; i <= 1; i++) {
+        let Option = document.createElement("option");
+        Select.appendChild(Option);
+        Option.textContent = "green";
+        Option.value = "green";
+      }
+      for (let i = 1; i <= 1; i++) {
+        let Option = document.createElement("option");
+        Select.appendChild(Option);
+        Option.textContent = Colors[0];
+        Option.value = Colors[0];
+      }
+      for (let i = 1; i <= 1; i++) {
+        let Option = document.createElement("option");
+        Select.appendChild(Option);
+        Option.textContent = Colors[2];
+        Option.value = Colors[2];
+      }
+      for (let i = 1; i <= 1; i++) {
+        let Option = document.createElement("option");
+        Select.appendChild(Option);
+        Option.textContent = Colors[3];
+        Option.value = Colors[3];
+      }
+      document.getElementById("Colors").onchange = ChangeBgColor;
+      function ChangeBgColor() {
+        document.body.style.background = this.value;
+      }
+      function Click() {
+        document.getElementById("demo").style.filter =
+          "hue-rotate(" + Math.random() * 360 + "deg)";
+      }
+    </script>
+  </body>
+</html>
