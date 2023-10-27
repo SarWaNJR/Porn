@@ -242,6 +242,43 @@ body.bg {
     z-index: 1;
     background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
   }
+  /*  */
+  /* Full WIdth Img */
+  #FullImg {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    height: 100vh;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #FullImg #fullWidth {
+    width: fit-content;
+    object-fit: contain;
+    object-position: center;
+    height: 220px;
+    margin: auto;
+    min-width: 340px;
+    border-radius: 20px;
+  }
+  #fullWidth {
+    border-radius: 20px;
+  }
+  .remove {
+    width: 30px;
+    color: red;
+    position: absolute;
+    right: 0.2rem;
+    top: 17rem;
+    transition: 1s ease;
+  }
+  .Zoom {
+    transform: scale(1.2);
+  }
 }
 @media screen and (min-width: 475px) {
   .bar {
